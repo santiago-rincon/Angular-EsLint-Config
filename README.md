@@ -147,11 +147,20 @@ node_modules
 ## Instalación y configuración de extensiones para Visual Studio Code
 Para obtener ayuda en el IDE se recomienda las siguientes extensiones y configuración
 - **Extensiones**
+
 ![Extensiones para visual studio code](./assets/extensions.png)
+
 - **Configuración**
 Para aplicar las correcciones automáticas (auto fix) al guardar se debe configurar lo siguiente:
 
-![Configuración para visual studio code](./assets/settings.png)
+![Configuración para visual studio code](./assets/settings.png)+
+
+O en el `settings.json` agragar la siguiente línea
+```json
+"editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+```
 ## Scripts
 Se puede agregar dos script al `package.json` para:
 - Listar los archivos que presentan errores del Linter `ng lint`
