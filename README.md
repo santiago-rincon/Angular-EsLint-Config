@@ -18,21 +18,20 @@ Las reglas aplicadas a esta configuración se pueden ver con más detalle en la 
 ```json
 {
   "root": true,
-  "ignorePatterns": [
-    "projects/**/*"
-  ],
+  "ignorePatterns": ["projects/**/*"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "overrides": [
     {
-      "files": [
-        "*.ts"
-      ],
+      "files": ["*.ts"],
       "parserOptions": {
-        "project": [
-          "tsconfig.json"
-        ],
+        "project": ["tsconfig.json"],
         "createDefaultProgram": true
       },
       "extends": [
+        "eslint:recommended",
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
         "plugin:prettier/recommended"
@@ -41,10 +40,7 @@ Las reglas aplicadas a esta configuración se pueden ver con más detalle en la 
         "@angular-eslint/component-class-suffix": [
           "error",
           {
-            "suffixes": [
-              "Page",
-              "Component"
-            ]
+            "suffixes": ["Page", "Component"]
           }
         ],
         "@angular-eslint/component-selector": [
@@ -63,63 +59,30 @@ Las reglas aplicadas a esta configuración se pueden ver con más detalle en la 
             "style": "camelCase"
           }
         ],
-        "@angular-eslint/use-lifecycle-interface": [
-          "error"
-        ],
+        "@angular-eslint/use-lifecycle-interface": ["error"],
         "@typescript-eslint/member-ordering": 0,
         "@typescript-eslint/naming-convention": 0,
-        "@angular-eslint/use-injectable-provided-in": [
-          "error"
-        ],
-        "@angular-eslint/sort-lifecycle-methods": [
-          "error"
-        ],
-        "@angular-eslint/relative-url-prefix": [
-          "error"
-        ],
-        "@angular-eslint/prefer-standalone-component": [
-          "error"
-        ],
-        "@angular-eslint/prefer-output-readonly": [
-          "error"
-        ],
-        "@angular-eslint/no-lifecycle-call": [
-          "error"
-        ],
-        "@angular-eslint/no-conflicting-lifecycle": [
-          "error"
-        ],
-        "@angular-eslint/contextual-lifecycle": [
-          "error"
-        ]
+        "@angular-eslint/use-injectable-provided-in": ["error"],
+        "@angular-eslint/sort-lifecycle-methods": ["error"],
+        "@angular-eslint/relative-url-prefix": ["error"],
+        "@angular-eslint/prefer-standalone-component": ["error"],
+        "@angular-eslint/prefer-output-readonly": ["error"],
+        "@angular-eslint/no-lifecycle-call": ["error"],
+        "@angular-eslint/no-conflicting-lifecycle": ["error"],
+        "@angular-eslint/contextual-lifecycle": ["error"]
       }
     },
     {
-      "files": [
-        "*.html"
-      ],
-      "extends": [
-        "plugin:@angular-eslint/template/recommended"
-      ],
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     },
     {
-      "files": [
-        "*.html"
-      ],
-      "excludedFiles": [
-        "*inline-template-*.component.html"
-      ],
-      "extends": [
-        "plugin:prettier/recommended"
-      ],
+      "files": ["*.html"],
+      "excludedFiles": ["*inline-template-*.component.html"],
+      "extends": ["plugin:prettier/recommended"],
       "rules": {
-        "prettier/prettier": [
-          "error",
-          {
-            "parser": "angular"
-          }
-        ]
+        "prettier/prettier": ["error", { "parser": "angular" }]
       }
     }
   ]
